@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather App | Piyush Rawal P</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Liquid Header -->
+    <header class="hero" id="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">🌤️ Weather Forecast</h1>
+        <p class="hero-sub">by <b>Piyush Rawal P</b></p>
+
+        <div class="search-row">
+          <input id="cityInput" type="text" placeholder="Enter city name..." aria-label="City name" />
+          <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="history" id="history"></div>
+      </div>
+
+      <!-- Animated liquid svg -->
+      <svg class="liquid" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" x2="1">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"></stop>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"></stop>
+          </linearGradient>
+        </defs>
+        <path id="wave" fill="url(#lg)" d=""></path>
+      </svg>
+    </header>
+
+    <main class="main">
+      <section class="card" id="currentCard" aria-live="polite">
+        <div class="current-left">
+          <img id="weatherIcon" src="" alt="" />
+          <div class="temp" id="temperature">--°C</div>
+        </div>
+        <div class="current-right">
+          <h2 id="cityName">Enter city to start</h2>
+          <p id="condition">—</p>
+          <p id="humidity">Humidity: —</p>
+          <p id="wind">Wind: —</p>
+        </div>
+      </section>
+
+      <section class="charts">
+        <div class="chart-card">
+          <h3>Hourly (next 24h)</h3>
+          <canvas id="hourlyChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Daily (7-day)</h3>
+          <canvas id="dailyChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Weekly Temp Range</h3>
+          <canvas id="weeklyChart"></canvas>
+        </div>
+      </section>
+
+      <p id="errorMessage" class="error"></p>
+    </main>
+
+    <footer class="footer">© 2025 | Weather App by Piyush Rawal P</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
